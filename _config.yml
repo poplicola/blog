@@ -44,7 +44,7 @@ defaults:
     values:
       layout: "page"
 
-# Plugins
+# GitHub Pages plugins
 plugins:
   - jekyll-paginate
   - jekyll-feed
