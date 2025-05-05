@@ -61,6 +61,10 @@ exclude:
   - .jekyll
   - .jekyll-cache
   - .git
+  - "*.txt"
+  - "README.md"
+  - "installation-guide.md"
+  - "usage-guide.md"
 
 # Disqus comments
 disqus:
