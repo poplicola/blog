@@ -70,6 +70,7 @@ disqus:
 google_analytics: UA-XXXXXXXX-X
 
 # Sass settings
-sass:
-  sass_dir: _sass
-  style: compressed
+# Temporarily commented out to work around dependency issues
+# sass:
+#   sass_dir: _sass
+#   style: compressed

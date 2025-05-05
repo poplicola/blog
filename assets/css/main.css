@@ -1,0 +1,139 @@
+/* Basic styling for Bootstrap Jekyll Blog */
+
+body {
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+a {
+  color: #007bff;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+/* Header styles */
+.jumbotron {
+  background: linear-gradient(to right, #0062cc, #0096ff);
+}
+
+/* Post styles */
+.post .post-title {
+  color: #343a40;
+}
+
+.post .post-meta {
+  font-size: 0.9rem;
+}
+
+.post .post-content img {
+  max-width: 100%;
+  height: auto;
+  margin: 1.5rem 0;
+}
+
+.post .post-content blockquote {
+  border-left: 4px solid #007bff;
+  padding-left: 1rem;
+  color: #6c757d;
+  font-style: italic;
+}
+
+/* Sidebar styles */
+.sidebar .card-header {
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+
+.sidebar .social-links a {
+  color: #6c757d;
+}
+
+.sidebar .social-links a:hover {
+  color: #007bff;
+}
+
+.sidebar .tag-cloud a {
+  display: inline-block;
+  margin: 0.2rem;
+  transition: background-color 0.2s;
+}
+
+.sidebar .tag-cloud a:hover {
+  background-color: #e2e6ea;
+}
+
+/* Footer styles */
+.footer {
+  border-top: 1px solid #e9ecef;
+}
+
+.footer h5 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.footer .social-links a {
+  color: #6c757d;
+}
+
+.footer .social-links a:hover {
+  color: #007bff;
+}
+
+/* Share buttons */
+.share-buttons .btn {
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.share-buttons .btn-twitter {
+  background-color: #1da1f2;
+  color: white;
+}
+
+.share-buttons .btn-twitter:hover {
+  background-color: #0c85d0;
+}
+
+.share-buttons .btn-facebook {
+  background-color: #3b5998;
+  color: white;
+}
+
+.share-buttons .btn-facebook:hover {
+  background-color: #2d4373;
+}
+
+.share-buttons .btn-linkedin {
+  background-color: #0077b5;
+  color: white;
+}
+
+.share-buttons .btn-linkedin:hover {
+  background-color: #005582;
+}
+
+/* Pagination */
+.pagination .page-item.active .page-link {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.pagination .page-link {
+  color: #007bff;
+}
+
+.pagination .page-link:hover {
+  color: #0056b3;
+}
+
+/* Responsiveness */
+@media (max-width: 991.98px) {
+  .sidebar {
+    margin-top: 2rem;
+  }
+}

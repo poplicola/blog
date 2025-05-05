@@ -1,7 +1,10 @@
 source "https://rubygems.org"
 
-# Jekyll version
+# Jekyll version with minimal dependencies for local development
 gem "jekyll", "~> 4.3.2"
+
+# Explicitly exclude sass converter to avoid native extension issues
+gem "jekyll-sass-converter", ">= 0", :require => false
 
 # Jekyll plugins
 group :jekyll_plugins do
@@ -9,8 +12,6 @@ group :jekyll_plugins do
   gem "jekyll-feed"
   gem "jekyll-sitemap"
   gem "jekyll-seo-tag"
-  # Use jekyll-sass-converter 2.x which doesn't need protobuf
-  gem "jekyll-sass-converter", "~> 2.0"
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
