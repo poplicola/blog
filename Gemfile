@@ -9,6 +9,8 @@ group :jekyll_plugins do
   gem "jekyll-feed"
   gem "jekyll-sitemap"
   gem "jekyll-seo-tag"
+  # Use jekyll-sass-converter 2.x which doesn't need protobuf
+  gem "jekyll-sass-converter", "~> 2.0"
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
