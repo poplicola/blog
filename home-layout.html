@@ -1,0 +1,93 @@
+---
+layout: default
+---
+
+<div class="row">
+  <div class="col-lg-8">
+    <h1 class="mb-4">{{ page.title }}</h1>
+    
+    {{ content }}
+    
+    <div class="post-list">
+      {% for post in paginator.posts %}
+        <article class="card mb-4">
+          {% if post.image %}
+          <img src="{{ post.image | relative_url }}" class="card-img-top" alt="{{ post.title }}">
+          {% endif %}
+          <div class="card-body">
+            <h2 class="card-title h4">
+              <a href="{{ post.url | relative_url }}" class="text-decoration-none">{{ post.title }}</a>
+            </h2>
+            <div class="card-subtitle mb-2 text-muted small">
+              <span>
+                <i class="far fa-calendar-alt"></i> {{ post.date | date: "%B %-d, %Y" }}
+              </span>
+              {% if post.categories.size > 0 %}
+              <span class="ms-3">
+                <i class="far fa-folder-open"></i>
+                {% for category in post.categories %}
+                  <a href="{{ site.baseurl }}/categories#{{ category | slugize }}" class="text-decoration-none">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
+                {% endfor %}
+              </span>
+              {% endif %}
+            </div>
+            <div class="card-text">
+              {{ post.excerpt | strip_html | truncatewords: 50 }}
+            </div>
+            <a href="{{ post.url | relative_url }}" class="btn btn-primary btn-sm mt-2">Read More</a>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+    
+    <!-- Pagination -->
+    {% if paginator.total_pages > 1 %}
+    <nav aria-label="Page navigation">
+      <ul class="pagination justify-content-center">
+        {% if paginator.previous_page %}
+        <li class="page-item">
+          <a class="page-link" href="{{ paginator.previous_page_path | relative_url }}" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+          <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        {% endif %}
+
+        {% for page in (1..paginator.total_pages) %}
+          {% if page == paginator.page %}
+          <li class="page-item active"><a class="page-link" href="#">{{ page }}</a></li>
+          {% elsif page == 1 %}
+          <li class="page-item"><a class="page-link" href="{{ site.baseurl }}/">{{ page }}</a></li>
+          {% else %}
+          <li class="page-item"><a class="page-link" href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a></li>
+          {% endif %}
+        {% endfor %}
+
+        {% if paginator.next_page %}
+        <li class="page-item">
+          <a class="page-link" href="{{ paginator.next_page_path | relative_url }}" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+          <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+    </nav>
+    {% endif %}
+    
+  </div>
+  
+  <div class="col-lg-4">
+    {% include sidebar.html %}
+  </div>
+</div>

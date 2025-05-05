@@ -1,0 +1,83 @@
+<div class="sidebar">
+  <!-- Author Profile Widget -->
+  <div class="card mb-4">
+    <div class="card-body text-center">
+      {% if site.author.avatar %}
+      <img src="{{ site.author.avatar | relative_url }}" alt="{{ site.author.name }}" class="rounded-circle mb-3" width="120">
+      {% endif %}
+      <h5 class="card-title">{{ site.author.name }}</h5>
+      <p class="card-text">{{ site.author.bio }}</p>
+      <div class="social-links">
+        {% if site.author.social.twitter %}
+        <a href="https://twitter.com/{{ site.author.social.twitter }}" class="me-2" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+        {% endif %}
+        
+        {% if site.author.social.github %}
+        <a href="https://github.com/{{ site.author.social.github }}" class="me-2" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+        {% endif %}
+        
+        {% if site.author.social.linkedin %}
+        <a href="https://linkedin.com/in/{{ site.author.social.linkedin }}" class="me-2" target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        {% endif %}
+        
+        {% if site.author.social.instagram %}
+        <a href="https://instagram.com/{{ site.author.social.instagram }}" class="me-2" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  
+  <!-- Recent Posts Widget -->
+  <div class="card mb-4">
+    <div class="card-header">Recent Posts</div>
+    <div class="card-body">
+      <ul class="list-unstyled mb-0">
+        {% for post in site.posts limit:5 %}
+        <li class="mb-2">
+          <a href="{{ post.url | relative_url }}" class="text-decoration-none">{{ post.title }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Categories Widget -->
+  <div class="card mb-4">
+    <div class="card-header">Categories</div>
+    <div class="card-body">
+      <ul class="list-unstyled mb-0">
+        {% assign categories_list = site.categories | sort %}
+        {% for category in categories_list %}
+        <li class="mb-2">
+          <a href="{{ site.baseurl }}/categories#{{ category[0] | slugize }}" class="text-decoration-none">
+            {{ category[0] }} <span class="badge bg-secondary">{{ category[1].size }}</span>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Tags Widget -->
+  <div class="card mb-4">
+    <div class="card-header">Tags</div>
+    <div class="card-body">
+      <div class="tag-cloud">
+        {% assign tags_list = site.tags | sort %}
+        {% for tag in tags_list %}
+        <a href="{{ site.baseurl }}/tags#{{ tag[0] | slugize }}" class="badge bg-light text-dark text-decoration-none m-1">
+          {{ tag[0] }} ({{ tag[1].size }})
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+<footer class="footer bg-light mt-5 py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h5>{{ site.title }}</h5>
+        <p>{{ site.description }}</p>
+      </div>
+      
+      <div class="col-md-4">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="{{ site.baseurl }}/" class="text-decoration-none">Home</a></li>
+          <li><a href="{{ site.baseurl }}/about/" class="text-decoration-none">About</a></li>
+          <li><a href="{{ site.baseurl }}/categories/" class="text-decoration-none">Categories</a></li>
+          <li><a href="{{ site.baseurl }}/contact/" class="text-decoration-none">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="col-md-4">
+        <h5>Connect With Us</h5>
+        <div class="social-links">
+          {% if site.author.social.twitter %}
+          <a href="https://twitter.com/{{ site.author.social.twitter }}" class="me-2" target="_blank">
+            <i class="fab fa-twitter fa-lg"></i>
+          </a>
+          {% endif %}
+          
+          {% if site.author.social.github %}
+          <a href="https://github.com/{{ site.author.social.github }}" class="me-2" target="_blank">
+            <i class="fab fa-github fa-lg"></i>
+          </a>
+          {% endif %}
+          
+          {% if site.author.social.linkedin %}
+          <a href="https://linkedin.com/in/{{ site.author.social.linkedin }}" class="me-2" target="_blank">
+            <i class="fab fa-linkedin fa-lg"></i>
+          </a>
+          {% endif %}
+          
+          {% if site.author.social.instagram %}
+          <a href="https://instagram.com/{{ site.author.social.instagram }}" class="me-2" target="_blank">
+            <i class="fab fa-instagram fa-lg"></i>
+          </a>
+          {% endif %}
+          
+          <a href="{{ site.baseurl }}/feed.xml" class="me-2" target="_blank">
+            <i class="fas fa-rss fa-lg"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row mt-3">
+      <div class="col-12 text-center">
+        <p class="mb-0">&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>

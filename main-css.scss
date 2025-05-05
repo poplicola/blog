@@ -1,0 +1,161 @@
+---
+---
+
+@import "custom";
+
+// Custom styles beyond Bootstrap
+
+// General styles
+body {
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+a {
+  color: #007bff;
+  transition: color 0.2s;
+  
+  &:hover {
+    color: #0056b3;
+  }
+}
+
+// Header styles
+.jumbotron {
+  background: linear-gradient(to right, #0062cc, #0096ff);
+}
+
+// Post styles
+.post {
+  .post-title {
+    color: #343a40;
+  }
+  
+  .post-meta {
+    font-size: 0.9rem;
+  }
+  
+  .post-content {
+    img {
+      max-width: 100%;
+      height: auto;
+      margin: 1.5rem 0;
+    }
+    
+    blockquote {
+      border-left: 4px solid #007bff;
+      padding-left: 1rem;
+      color: #6c757d;
+      font-style: italic;
+    }
+  }
+}
+
+// Sidebar styles
+.sidebar {
+  .card-header {
+    background-color: #f8f9fa;
+    font-weight: 600;
+  }
+  
+  .social-links {
+    a {
+      color: #6c757d;
+      
+      &:hover {
+        color: #007bff;
+      }
+    }
+  }
+  
+  .tag-cloud {
+    a {
+      display: inline-block;
+      margin: 0.2rem;
+      transition: background-color 0.2s;
+      
+      &:hover {
+        background-color: #e2e6ea;
+      }
+    }
+  }
+}
+
+// Footer styles
+.footer {
+  border-top: 1px solid #e9ecef;
+  
+  h5 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .social-links {
+    a {
+      color: #6c757d;
+      
+      &:hover {
+        color: #007bff;
+      }
+    }
+  }
+}
+
+// Share buttons
+.share-buttons {
+  .btn {
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .btn-twitter {
+    background-color: #1da1f2;
+    color: white;
+    
+    &:hover {
+      background-color: darken(#1da1f2, 10%);
+    }
+  }
+  
+  .btn-facebook {
+    background-color: #3b5998;
+    color: white;
+    
+    &:hover {
+      background-color: darken(#3b5998, 10%);
+    }
+  }
+  
+  .btn-linkedin {
+    background-color: #0077b5;
+    color: white;
+    
+    &:hover {
+      background-color: darken(#0077b5, 10%);
+    }
+  }
+}
+
+// Pagination
+.pagination {
+  .page-item.active .page-link {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .page-link {
+    color: #007bff;
+    
+    &:hover {
+      color: #0056b3;
+    }
+  }
+}
+
+// Responsiveness
+@media (max-width: 991.98px) {
+  .sidebar {
+    margin-top: 2rem;
+  }
+}
