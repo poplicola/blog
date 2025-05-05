@@ -1,0 +1,260 @@
+---
+layout: post
+title: "Markdown and Formatting Guide"
+date: 2023-01-15 14:30:00 +0000
+categories: [tutorial, markdown]
+tags: [formatting, guide, jekyll]
+image: /assets/images/post-markdown.jpg
+---
+
+This post demonstrates Markdown syntax and formatting options available in Jekyll blogs. You can use this as a reference when writing your own posts.
+
+## Basic Markdown Syntax
+
+### Headers
+
+```markdown
+# H1 - Major heading
+## H2 - Section heading
+### H3 - Subsection heading
+#### H4 - Subsection heading
+##### H5 - Subsection heading
+###### H6 - Subsection heading
+```
+
+### Emphasis
+
+```markdown
+*This text will be italic*
+_This will also be italic_
+
+**This text will be bold**
+__This will also be bold__
+
+_You **can** combine them_
+```
+
+*This text will be italic*
+_This will also be italic_
+
+**This text will be bold**
+__This will also be bold__
+
+_You **can** combine them_
+
+### Lists
+
+#### Unordered Lists
+
+```markdown
+- Item 1
+- Item 2
+  - Subitem 2.1
+  - Subitem 2.2
+- Item 3
+```
+
+- Item 1
+- Item 2
+  - Subitem 2.1
+  - Subitem 2.2
+- Item 3
+
+#### Ordered Lists
+
+```markdown
+1. First item
+2. Second item
+3. Third item
+   1. Subitem 3.1
+   2. Subitem 3.2
+```
+
+1. First item
+2. Second item
+3. Third item
+   1. Subitem 3.1
+   2. Subitem 3.2
+
+### Links
+
+```markdown
+[Text to display](https://www.example.com)
+```
+
+[Text to display](https://www.example.com)
+
+### Images
+
+```markdown
+![Alt text for image](/assets/images/example.jpg)
+```
+
+### Blockquotes
+
+```markdown
+> This is a blockquote.
+> 
+> It can span multiple lines.
+```
+
+> This is a blockquote.
+> 
+> It can span multiple lines.
+
+### Horizontal Rule
+
+```markdown
+---
+```
+
+---
+
+### Code
+
+#### Inline Code
+
+```markdown
+Use the `print()` function
+```
+
+Use the `print()` function
+
+#### Code Blocks
+
+````markdown
+```python
+def hello_world():
+    print("Hello, world!")
+```
+````
+
+```python
+def hello_world():
+    print("Hello, world!")
+```
+
+### Tables
+
+```markdown
+| Header 1 | Header 2 | Header 3 |
+|----------|----------|----------|
+| Row 1    | Data     | Data     |
+| Row 2    | Data     | Data     |
+```
+
+| Header 1 | Header 2 | Header 3 |
+|----------|----------|----------|
+| Row 1    | Data     | Data     |
+| Row 2    | Data     | Data     |
+
+## Jekyll-Specific Features
+
+### Front Matter
+
+Every Jekyll post starts with front matter:
+
+```yaml
+---
+layout: post
+title: "Your Post Title"
+date: YYYY-MM-DD HH:MM:SS +0000
+categories: [category1, category2]
+tags: [tag1, tag2]
+image: /assets/images/featured-image.jpg
+---
+```
+
+### Including Images
+
+To include an image in your post that's stored in your Jekyll site:
+
+```markdown
+![My Image](/assets/images/my-image.jpg)
+```
+
+For more control, you can use HTML:
+
+```html
+<img src="/assets/images/my-image.jpg" alt="My Image" class="img-fluid rounded">
+```
+
+### Linking to Other Posts
+
+```markdown
+[Link to another post]({% post_url 2023-01-01-welcome-to-jekyll-with-bootstrap %})
+```
+
+### Including Code from Files
+
+Using the `include` tag (note: this requires additional plugins):
+
+{% raw %}
+```liquid
+{% include_relative code/example.py %}
+```
+{% endraw %}
+
+## Bootstrap Features
+
+Since this theme uses Bootstrap 5, you can use Bootstrap classes directly in your Markdown:
+
+### Alert Boxes
+
+```html
+<div class="alert alert-primary" role="alert">
+  This is a primary alert—check it out!
+</div>
+```
+
+<div class="alert alert-primary" role="alert">
+  This is a primary alert—check it out!
+</div>
+
+<div class="alert alert-success" role="alert">
+  This is a success alert—check it out!
+</div>
+
+### Cards
+
+```html
+<div class="card">
+  <div class="card-header">
+    Featured
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+```
+
+<div class="card">
+  <div class="card-header">
+    Featured
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+### Buttons
+
+```html
+<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-success">Success</button>
+```
+
+<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-success">Success</button>
+
+## Conclusion
+
+This post covered the basics of Markdown formatting and how to use it within a Jekyll blog. For more information, refer to the [Markdown Guide](https://www.markdownguide.org/) or the [Jekyll Documentation](https://jekyllrb.com/docs/).
+
+Happy writing!

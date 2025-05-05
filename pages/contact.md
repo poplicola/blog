@@ -1,0 +1,46 @@
+---
+layout: page
+title: Contact
+permalink: /contact/
+---
+
+## Get in Touch
+
+I'd love to hear from you! Feel free to reach out with any questions, suggestions, or collaboration opportunities.
+
+### Contact Form
+
+<form id="contact-form" class="contact-form" action="https://formspree.io/your-email@example.com" method="POST">
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label for="name" class="form-label">Your Name</label>
+      <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="email" class="form-label">Your Email</label>
+      <input type="email" class="form-control" id="email" name="_replyto" required>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="subject" class="form-label">Subject</label>
+    <input type="text" class="form-control" id="subject" name="subject" required>
+  </div>
+  <div class="mb-3">
+    <label for="message" class="form-label">Message</label>
+    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Send Message</button>
+</form>
+
+### Social Media
+
+You can also connect with me on social media:
+
+- [Twitter](https://twitter.com/{{ site.author.social.twitter }})
+- [GitHub](https://github.com/{{ site.author.social.github }})
+- [LinkedIn](https://linkedin.com/in/{{ site.author.social.linkedin }})
+- [Instagram](https://instagram.com/{{ site.author.social.instagram }})
+
+### Email
+
+If you prefer, you can email me directly at: [{{ site.author.email }}](mailto:{{ site.author.email }})

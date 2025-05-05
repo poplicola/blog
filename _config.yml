@@ -1,0 +1,75 @@
+# Site settings
+title: Bootstrap Jekyll Blog
+description: A sleek, responsive Jekyll blog using Bootstrap 5
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Author settings
+author:
+  name: Your Name
+  bio: A short bio about yourself
+  email: your.email@example.com
+  avatar: /assets/images/avatar.jpg
+  social:
+    twitter: yourusername
+    github: yourusername
+    linkedin: yourusername
+    instagram: yourusername
+
+# Build settings
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+paginate: 5
+paginate_path: "/page/:num/"
+
+# Collections
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+
+# Default front matter
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: true
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll
+  - .jekyll-cache
+  - .git
+
+# Disqus comments
+disqus:
+  shortname: your-disqus-shortname
+
+# Google Analytics
+google_analytics: UA-XXXXXXXX-X
+
+# Sass settings
+sass:
+  sass_dir: _sass
+  style: compressed
